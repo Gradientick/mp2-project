@@ -2,12 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Shop Smart</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7520d132f7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Fonts -->
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <header>
+      <h1>Shop Smart</h1>
+      <section>
+        <figure class="bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <p class="bag-item">#</p>
+        </figure>
+        <ul>
+          <li>About</li>
+          <li>Help</li>
+          <li>Profile</li>
+        </ul>
+      </section>
+    </header>
+    <main>
+      <h1>Shop Smart</h1>
+    </main>
+    <section class="content-container">
+      <div class="sidebar">
+        <li>Electronic Devices</li>
+        <li>Electronic Accesories</li>
+        <li>TV and Home Appliances</li>
+        <li>Health and Beauty</li>
+        <li>Babies and Toys</li>
+        <li>Groceries and Pets</li>
+        <li>Home and Living</li>
+        <li>Women's Fashion and Accesories</li>
+        <li>Men's Fashion and Accesories</li>
+        <li>Kid's Fashion and Accesories</li>
+        <li>Sports and Lifestyle</li>
+        <li>Automotive and Motorcycles</li>
+      </div>
+      <div class="product-container" id="product-list"></div>
+    </section>
+    <script src="main.js"></script>
   </body>
 </html>
