@@ -47,6 +47,7 @@ header ul li {
 header ul li:hover {
   background-color: #fa9884;
   color: #fff3e2;
+  cursor: pointer;
 }
 
 header ul li figure img {
@@ -90,6 +91,7 @@ header section {
 .bag-item:hover {
   background-color: #fa9884;
   color: #fff3e2;
+  cursor: pointer;
 }
 
 /* main */
@@ -127,6 +129,7 @@ main h1 {
 
 .navbuttons-container li:hover {
   color: whitesmoke;
+  cursor: pointer;
 }
 /* content */
 .content-container {
