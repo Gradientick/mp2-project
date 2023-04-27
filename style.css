@@ -16,6 +16,8 @@ header {
   justify-content: space-between;
   position: sticky;
   top: 0px;
+  width: 98.899vw;
+  padding: 5px;
 }
 
 header h1 {
@@ -103,21 +105,24 @@ main h1 {
   font-size: 12em;
   color: #fff3e2;
   padding: 10px;
+  text-shadow: 3px 4px black;
 }
 
 .navbuttons-container {
-  width: 98.89vw;
+  width: 99.9vw;
   text-transform: uppercase;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   background-color: #fb765b;
-  padding: 0.5em 0;
+  padding: 0.5em 0em;
 }
 
 .navbuttons-container li {
   color: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   transition: all 0.3s;
+  margin-left: 7em;
 }
 
 .navbuttons-container li:hover {
@@ -147,4 +152,48 @@ main h1 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: aqua;
+  padding: 10px 10px;
+  border-radius: 5px;
+  gap: 1em;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #product-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+  main h1 {
+    font-size: 3.5em;
+    padding: 0.2em;
+  }
+
+  main {
+    height: 10em;
+  }
+
+  .navbuttons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbuttons-container li {
+    margin: 0 0 0 2.4em;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1260px) {
+  main h1 {
+    font-size: 7em;
+  }
+  #product-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+  }
+  .navbuttons-container li {
+    margin-left: 3em;
+  }
 }
