@@ -54,6 +54,11 @@ header ul li figure img {
   scale: 20%;
 }
 
+img {
+  width: 180px;
+  height: auto;
+}
+
 .shopping-bag {
   display: flex;
 }
