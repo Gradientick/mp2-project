@@ -133,8 +133,15 @@ const generateProducts1 = async () => {
     price.textContent = `₱ ${product.price}`;
 
     const addToCartBtn = document.createElement("button");
+
     addToCartBtn.classList.add("add-cart-button");
     addToCartBtn.textContent = "Add to Cart";
+
+    /*   const addBtn = document.querySelector("add-cart-button");
+
+    addBtn.addEventListener("click", (add) => {
+      console.log("Hey");
+    }); */
 
     document.getElementById("product-list").appendChild(card);
     card.appendChild(image);
@@ -145,3 +152,53 @@ const generateProducts1 = async () => {
 };
 
 generateProducts1();
+
+//Second Set of Product API
+
+const fetchNewProduct2 = async () => {
+  const response2 = fetch("https://dummyjson.com/products");
+  const data2 = (await response2).json();
+  return data2;
+};
+
+const generateProducts2 = async () => {
+  const data2 = await fetchNewProduct2();
+  const product2 = data2.products;
+  product2.forEach(function (product2) {
+    const card = document.createElement("div");
+    card.classList.add("item");
+
+    const image = document.createElement("img");
+    image.src = product2.images[0];
+
+    const title = document.createElement("h5");
+    title.textContent = product2.title;
+
+    const price = document.createElement("p");
+    price.textContent = `₱ ${product2.price}`;
+
+    const addToCartBtn = document.createElement("button");
+
+    addToCartBtn.classList.add("add-cart-button");
+    addToCartBtn.textContent = "Add to Cart";
+
+    document.getElementById("product-list").appendChild(card);
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(price);
+    card.appendChild(addToCartBtn);
+  });
+};
+generateProducts2();
+
+const openModal = document.getElementById("openModal");
+const closeModal = document.getElementById("closeModal");
+const modal = document.querySelector(".shopping-cart-modal");
+
+openModal.addEventListener("click", (add) => {
+  modal.style.display = "flex";
+});
+
+closeModal.addEventListener("click", (add) => {
+  modal.style.display = "none";
+});

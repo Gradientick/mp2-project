@@ -180,6 +180,65 @@ main h1 {
   border: none;
   border-radius: 5px;
   box-shadow: 4px 4px #e74646;
+  cursor: pointer;
+}
+
+.fixed-shopping-cart-button {
+  background-color: #ffe5ca;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+  background-image: url("https://kit.fontawesome.com/7520d132f7.js");
+}
+
+.fixed-shopping-cart-button:hover {
+  box-shadow: 6px 6px 6px #e74646;
+  height: 72px;
+  width: 72px;
+}
+
+.shopping-cart-modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.316);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  gap: 1em;
+  padding: 1em;
+  width: 80%;
+  height: 80%;
+}
+
+.close-modal-button {
+  background-color: #ffe5ca;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: -35px;
+  left: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  height: 42px;
+  width: 42px;
+  top: -35px;
+  left: 100%;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767px) {
