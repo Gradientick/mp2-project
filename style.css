@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -116,7 +117,7 @@ main h1 {
 }
 
 .navbuttons-container {
-  width: 99.9vw;
+  width: 98.89vw;
   text-transform: uppercase;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -174,6 +175,7 @@ main h1 {
   box-shadow: 5px 5px 5px 5px #fa785e;
 }
 
+/* Shopping Cart CSS */
 .add-cart-button {
   padding: 10px 5px;
   background-color: #fb765b;
@@ -193,6 +195,7 @@ main h1 {
   border-radius: 100%;
   cursor: pointer;
   background-image: url("https://kit.fontawesome.com/7520d132f7.js");
+  transition: all 0.3s;
 }
 
 .fixed-shopping-cart-button:hover {
@@ -213,6 +216,10 @@ main h1 {
   top: 0;
 }
 
+.shopping-cart-modal h1 {
+  color: #fa785e;
+}
+
 .modal-container {
   display: flex;
   flex-direction: column;
@@ -223,13 +230,17 @@ main h1 {
   height: 80%;
 }
 
+.modal-container h1 {
+  font-size: 3em;
+}
+
 .close-modal-button {
   background-color: #ffe5ca;
   height: 40px;
   width: 40px;
   position: relative;
-  top: -35px;
-  left: 100%;
+  top: -33px;
+  left: 99.7%;
   border-radius: 100%;
   cursor: pointer;
 }
@@ -239,6 +250,39 @@ main h1 {
   width: 42px;
   top: -35px;
   left: 100%;
+}
+.cart-and-checkout-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.cart-items-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 4px;
+  background-color: #ffe5ca;
+  width: 13.5em;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.checkout-container {
+  background-color: #fff3e2;
+  height: 55vh;
+  padding: 1em;
+  border-radius: 4px;
+}
+#checkout {
+  color: black;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767px) {

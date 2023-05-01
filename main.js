@@ -130,7 +130,7 @@ const generateProducts1 = async () => {
     title.textContent = product.title;
 
     const price = document.createElement("p");
-    price.textContent = `₱ ${product.price}`;
+    price.textContent = `$ ${product.price}`;
 
     const addToCartBtn = document.createElement("button");
 
@@ -175,7 +175,7 @@ const generateProducts2 = async () => {
     title.textContent = product2.title;
 
     const price = document.createElement("p");
-    price.textContent = `₱ ${product2.price}`;
+    price.textContent = `$ ${product2.price}`;
 
     const addToCartBtn = document.createElement("button");
 
