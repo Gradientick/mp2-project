@@ -223,7 +223,7 @@ main h1 {
 .modal-container {
   display: flex;
   flex-direction: column;
-  background-color: beige;
+  background-color: #fff3e2;
   gap: 1em;
   padding: 1em;
   width: 80%;
@@ -276,7 +276,7 @@ main h1 {
   justify-content: space-evenly;
 }
 .checkout-container {
-  background-color: #fff3e2;
+  background-color: beige;
   height: 55vh;
   padding: 1em;
   border-radius: 4px;

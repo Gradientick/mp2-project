@@ -1,114 +1,36 @@
-/* const products = [
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-  {
-    image: "https://picsum.photos/140",
-    title: "Product",
-    price: 123,
-  },
-]; */
+// const categoryButtons = document.querySelectorAll("[data-category-button]");
+// categoryButtons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     const buttonClicked = event.target.textContent;
+//     switch (buttonClicked) {
+//       case "women's clothing":
+//         {
+//           filterProducts();
+//         }
+//         break;
+//       case "men's clothing":
+//         {
+//           console.log("men");
+//         }
+//         break;
+//       case "jewelry":
+//         {
+//           console.log("jewelry");
+//         }
+//         break;
+//       case "electronics": {
+//         console.log("electronics");
+//       }
+//       default:
+//         console.log("not valid");
+//     }
+//   });
+// }); Looped through category buttons
 
-const categoryButtons = document.querySelectorAll("[data-category-button]");
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const buttonClicked = event.target.textContent;
-  });
-});
-
-const filterResults = (buttonClicked) => {};
+const filterItemsByCategory = (items, category) => {
+  const filteredItems = items.filter((item) => item.category === category);
+  return filteredItems;
+};
 
 const fetchNewProduct1 = async () => {
   const response1 = fetch("https://fakestoreapi.com/products");
@@ -119,6 +41,8 @@ const fetchNewProduct1 = async () => {
 const generateProducts1 = async () => {
   const data1 = await fetchNewProduct1();
   const product1 = data1;
+  // console.log(product1);
+  // filterItemsByCategory(product1, "jewelry"); currently trying out the filter function here
   product1.forEach(function (product) {
     const card = document.createElement("div");
     card.classList.add("item");
