@@ -228,6 +228,7 @@ main h1 {
   padding: 1em;
   width: 80%;
   height: 80%;
+  overscroll-behavior: auto contain;
 }
 
 .modal-container h1 {
@@ -259,6 +260,7 @@ main h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
+  overscroll-behavior: auto contain;
 }
 .cart-item {
   display: flex;

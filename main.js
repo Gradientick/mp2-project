@@ -1,31 +1,11 @@
-// const categoryButtons = document.querySelectorAll("[data-category-button]");
-// categoryButtons.forEach((button) => {
-//   button.addEventListener("click", (event) => {
-//     const buttonClicked = event.target.textContent;
-//     switch (buttonClicked) {
-//       case "women's clothing":
-//         {
-//           filterProducts();
-//         }
-//         break;
-//       case "men's clothing":
-//         {
-//           console.log("men");
-//         }
-//         break;
-//       case "jewelry":
-//         {
-//           console.log("jewelry");
-//         }
-//         break;
-//       case "electronics": {
-//         console.log("electronics");
-//       }
-//       default:
-//         console.log("not valid");
-//     }
-//   });
-// }); Looped through category buttons
+const categoryButtons = document.querySelectorAll("[data-category-button]");
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const buttonClicked = event.target.textContent;
+    category = buttonClicked;
+    return category;
+  });
+});
 
 const filterItemsByCategory = (items, category) => {
   const filteredItems = items.filter((item) => item.category === category);
@@ -41,9 +21,12 @@ const fetchNewProduct1 = async () => {
 const generateProducts1 = async () => {
   const data1 = await fetchNewProduct1();
   const product1 = data1;
-  // console.log(product1);
-  // filterItemsByCategory(product1, "jewelry"); currently trying out the filter function here
-  product1.forEach(function (product) {
+  category = "women's clothing";
+  let filteredItems = filterItemsByCategory(product1, category);
+  // console.log(filteredItems);
+  // currently trying out the filter function here
+  filteredItems.forEach(function (product) {
+    // product1.forEach(function (product) {
     const card = document.createElement("div");
     card.classList.add("item");
 
@@ -87,6 +70,9 @@ const fetchNewProduct2 = async () => {
 
 const generateProducts2 = async () => {
   const data2 = await fetchNewProduct2();
+  const smartphone = data2.filter(
+    (product) => product.category === "smartphones"
+  );
   const product2 = data2.products;
   product2.forEach(function (product2) {
     const card = document.createElement("div");
