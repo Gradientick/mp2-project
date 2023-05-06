@@ -35,13 +35,15 @@ const generateProducts1 = async () => {
 
     const title = document.createElement("h5");
     title.textContent = product.title;
+    title.classList.add("title1");
 
     const price = document.createElement("p");
     price.textContent = `$ ${product.price}`;
 
     const addToCartBtn = document.createElement("button");
 
-    addToCartBtn.classList.add("add-cart-button");
+    addToCartBtn.classList.add("add-cart-button1");
+    addToCartBtn.classList.add(`${product.price}`);
     addToCartBtn.textContent = "Add to Cart";
 
     /*   const addBtn = document.querySelector("add-cart-button");
@@ -89,8 +91,9 @@ const generateProducts2 = async () => {
 
     const addToCartBtn = document.createElement("button");
 
-    addToCartBtn.classList.add("add-cart-button");
-    addToCartBtn.textContent = "Add to Cart";
+    addToCartBtn.classList.add("add-cart-button2");
+    addToCartBtn.classList.add(`${product2.price}`);
+    addToCartBtn.textContent = `Add to Cart`;
 
     document.getElementById("product-list").appendChild(card);
     card.appendChild(image);
@@ -101,6 +104,7 @@ const generateProducts2 = async () => {
 };
 generateProducts2();
 
+//Modal
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 const modal = document.querySelector(".shopping-cart-modal");
@@ -112,3 +116,20 @@ openModal.addEventListener("click", (add) => {
 closeModal.addEventListener("click", (add) => {
   modal.style.display = "none";
 });
+
+//Add to cart
+
+/* function addToCart(event) {
+  let button = event.target;
+  let shopItem = button.parentElement;
+  let title = shopItem.querySelector(".add-cart-button");
+  console.log(title);
+} */
+
+let button1 = document.getElementsByClassName("add-cart-button1");
+let button2 = document.getElementsByClassName("add-cart-button2");
+
+let shopItem = button1.parentElement;
+console.log(shopItem);
+/* let title = shopItem.getElementsByClassName("title1");
+console.log(title); */
