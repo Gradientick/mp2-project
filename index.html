@@ -12,9 +12,9 @@
     ></script>
     <!-- Fonts -->
   </head>
-  <body to-dark>
-    <header to-dark>
-      <h1>Shop Smart</h1>
+  <body dark-mode>
+    <header darker>
+      <h1 highlight>Shop Smart</h1>
       <section>
         <div class="toggle-container">
           <input type="checkbox" class="toggle" id="check" />
@@ -22,25 +22,25 @@
         </div>
       </section>
     </header>
-    <main>
-      <h1>Shop Smart</h1>
+    <main dark-mode>
+      <h1 to-yellow>Shop Smart</h1>
     </main>
     <nav>
-      <ul class="navbuttons-container">
-        <li data-category-button>women's clothing</li>
-        <li data-category-button>men's clothing</li>
-        <li data-category-button>jewelery</li>
-        <li data-category-button>electronics</li>
+      <ul class="navbuttons-container" darker>
+        <li data-category-button><span highlight>women's clothing</span></li>
+        <li data-category-button><span highlight>men's clothing</span></li>
+        <li data-category-button><span highlight>jewelery</span></li>
+        <li data-category-button><span highlight>electronics</span></li>
       </ul>
     </nav>
-    <section class="content-container">
-      <div class="product-container" id="product-list"></div>
+    <section class="content-container" dark-mode>
+      <div class="product-list" id="product-list" dark-mode></div>
     </section>
     <button class="fixed-shopping-cart-button" id="openModal" to-dark>
       <i class="fa-solid fa-bag-shopping"></i>
     </button>
-    <section class="shopping-cart-modal">
-      <article class="modal-container" to-dark>
+    <section class="shopping-cart-modal" id="shopping-cart-modal">
+      <article class="modal-container" dark-mode>
         <button class="close-modal-button" id="closeModal">X</button>
         <h1 class="cart-heading">Smart Cart</h1>
         <section class="cart-and-checkout-container">

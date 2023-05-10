@@ -73,7 +73,7 @@ input[type="checkbox"].toggle:focus + label::before {
 }
 
 input[type="checkbox"].toggle:checked + label::before {
-  background-color: hsl(100, 70%, 90%);
+  background-color: hsla(0, 0%, 100%, 0.714);
 }
 
 input[type="checkbox"].toggle:checked + label::after {
@@ -211,12 +211,6 @@ main h1 {
 }
 
 .product-list {
-  outline: 3px solid orange;
-  background-color: #ffe5ca;
-  margin-right: 2em;
-}
-
-#product-list {
   background-color: #ffe5ca;
   padding: 1em;
   display: grid;
@@ -389,6 +383,32 @@ main h1 {
 .purchase-button:hover {
   cursor: pointer;
   background-color: #fa9884;
+}
+/* dark-mode */
+
+.dark-mode {
+  background-color: #0f0f0f;
+}
+
+.darker {
+  background-color: #000000;
+}
+
+.highlight {
+  color: #ffffffd9;
+  transition: all 0.3s;
+}
+
+.highlight:hover {
+  color: #ffb800;
+}
+
+.to-yellow {
+  color: #ffb700da;
+}
+
+.grey-background {
+  color: #595959;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767px) {

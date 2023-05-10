@@ -1,11 +1,52 @@
 let category = "";
+let switchValue = false;
+const categoryButtons = document.querySelectorAll("[data-category-button]");
+const darkModeDarkerElements = document.querySelectorAll("[darker]");
 const darkModeToggle = document.getElementById("toggleSwitch");
-const toDarkElements = document.querySelectorAll("[to-dark]");
+const toDarkElements = document.querySelectorAll("[dark-mode]");
+const darkModeHighlights = document.querySelectorAll("[highlight]");
+const toYellow = document.querySelectorAll("[to-yellow]");
+const item = document.getElementsByClassName("item");
+const list = document.getElementsByClassName("navbuttons-container");
+const bagIcon = document.getElementsByClassName("fa-bag-shopping");
+const modalSection = document.getElementsByClassName("shopping-cart-modal");
 
-console.log(toDarkElements);
+console.log(item);
 
 darkModeToggle.addEventListener("click", () => {
-  // toDarkElements.style.backgroundColor = "red";
+  toDarkElements.forEach((element) => {
+    element.classList.toggle("dark-mode");
+  });
+
+  darkModeDarkerElements.forEach((element) => {
+    element.classList.toggle("darker");
+  });
+
+  darkModeHighlights.forEach((element) => {
+    element.classList.toggle("highlight");
+  });
+
+  toYellow.forEach((element) => {
+    element.classList.toggle("to-yellow");
+  });
+
+  categoryButtons.forEach((element) => {
+    element.classList.toggle("highlight");
+  });
+
+  item.forEach((element) => {
+    element.classList.toggle("grey-background");
+  });
+
+  bagIcon.forEach((element) => {
+    element.classList.toggle("highlight");
+  });
+
+  item.forEach((element) => {
+    element.classList.add("grey-background");
+  });
+
+  modalSection.classList.toggle("dark-mode");
 });
 // const categoryButtons = document.querySelectorAll("[data-category-button]");
 // categoryButtons.forEach((button) => {
@@ -110,7 +151,6 @@ const generateProducts1 = async () => {
   const data1 = await fetchNewProduct1();
   const product1 = data1;
   updateItemsList(product1);
-  const categoryButtons = document.querySelectorAll("[data-category-button]");
   categoryButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const buttonClicked = event.target.textContent;
