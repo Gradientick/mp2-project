@@ -36,13 +36,15 @@ const fetchNewProduct1 = async () => {
   return data1;
 };
 
-const updateItemsList = (product) => {
+const updateItemsList = async (product) => {
   product.forEach(function (product) {
     const card = document.createElement("div");
-    card.classList.add("item");
+    card.classList.add(`item`);
+    card.id = `card-container`;
 
     const image = document.createElement("img");
     image.src = product.image;
+    image.classList.add("image-added");
 
     const title = document.createElement("h5");
     title.textContent = product.title;
@@ -50,6 +52,7 @@ const updateItemsList = (product) => {
 
     const price = document.createElement("p");
     price.textContent = `$ ${product.price}`;
+    price.classList.add("price");
 
     const addToCartBtn = document.createElement("button");
 
@@ -63,27 +66,26 @@ const updateItemsList = (product) => {
     card.appendChild(price);
     card.appendChild(addToCartBtn);
   });
-};
-const removeItems = (product) => {
-  product.forEach(function (product) {
-    const toRemoveItems = document.getElementsByClassName("item");
-  });
+  selectItems();
 };
 const updateItemsList2 = (product) => {
   product.forEach(function (product2) {
     const card = document.createElement("div");
     card.classList.add("item");
+    card.id = `card-container`;
 
     const image = document.createElement("img");
     image.src = product2.images[0];
 
     const title = document.createElement("h5");
+    title.id = "title-id";
     title.textContent = product2.title;
 
     const price = document.createElement("p");
     price.textContent = `$ ${product2.price}`;
 
     const addToCartBtn = document.createElement("button");
+    addToCartBtn.id = "button-id";
 
     addToCartBtn.classList.add("add-cart-button2");
     addToCartBtn.classList.add(`${product2.price}`);
@@ -203,17 +205,60 @@ closeModal.addEventListener("click", (add) => {
 
 //Add to cart
 
-/* function addToCart(event) {
-  let button = event.target;
-  let shopItem = button.parentElement;
-  let title = shopItem.querySelector(".add-cart-button");
-  console.log(title);
-} */
+const selectItems2 = () => {
+  let button = document.getElementsByClassName("add-cart-button2");
 
-let button1 = document.getElementsByClassName("add-cart-button1");
-let button2 = document.getElementsByClassName("add-cart-button2");
+  Object.keys(button).forEach((key) => {
+    let accessedButtons = button[key];
+    accessedButtons.addEventListener("click", () => {
+      let item = accessedButtons.parentElement.innerText;
+      console.log(item);
+    });
+  });
+};
 
-let shopItem = button1.parentElement;
-console.log(shopItem);
-/* let title = shopItem.getElementsByClassName("title1");
-console.log(title); */
+const selectItems = () => {
+  let button = document.getElementsByClassName("add-cart-button1");
+
+  Object.keys(button).forEach((key) => {
+    let accessedButtons = button[key];
+    accessedButtons.addEventListener("click", () => {
+      let item = accessedButtons.parentElement;
+      let title = item.getElementsByClassName("title1")[0].innerText;
+      let price = item.getElementsByClassName("price")[0].innerText;
+      let imageSource = item.getElementsByClassName("image-added")[0].src;
+      console.log(imageSource);
+      const uL = document.getElementsByClassName("cart-items-list")[0];
+      const createdLi = document.createElement("li");
+      createdLi.classList.add(`cart-item`);
+      uL.appendChild(createdLi);
+      const image = document.createElement("img");
+      image.src = item.getElementsByClassName("image-added")[0].src;
+      createdLi.appendChild(image);
+      console.log(uL);
+      const h3 = document.createElement("h3");
+      h3.textContent = title;
+      createdLi.appendChild(h3);
+      const p = document.createElement("p");
+      p.textContent = price;
+      createdLi.appendChild(p);
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.classList.add(`add-cart-button1`);
+      createdLi.appendChild(removeBtn);
+      /*   const unorderedList = document.getElementsByClassName("cart-items-list");
+      const list = document.createElement("li");
+      list.classList.add = "cart-item";
+      const image = document.createElement("img");
+      image.src = item.getElementsByClassName("image-added").src;
+      unorderedList.append(list);
+      list.append(image); */
+
+      accessedButtons.style.backgroundColor = "#74d762";
+      accessedButtons.innerText = "Added to Cart";
+      //
+
+      console.log(title);
+    });
+  });
+};
