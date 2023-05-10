@@ -1,4 +1,12 @@
 let category = "";
+const darkModeToggle = document.getElementById("toggleSwitch");
+const toDarkElements = document.querySelectorAll("[to-dark]");
+
+console.log(toDarkElements);
+
+darkModeToggle.addEventListener("click", () => {
+  // toDarkElements.style.backgroundColor = "red";
+});
 // const categoryButtons = document.querySelectorAll("[data-category-button]");
 // categoryButtons.forEach((button) => {
 //   button.addEventListener("click", (event) => {
@@ -112,6 +120,7 @@ const generateProducts1 = async () => {
         case "women's clothing":
           let itemCards = document.querySelectorAll("item");
           console.log(itemCards);
+          ``;
           var filteredItems = filterItemsByCategory(product1, category);
           updateItemsList(filteredItems);
           break;

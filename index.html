@@ -12,13 +12,14 @@
     ></script>
     <!-- Fonts -->
   </head>
-  <body>
-    <header>
+  <body to-dark>
+    <header to-dark>
       <h1>Shop Smart</h1>
       <section>
-        <figure class="bag">
-          <i class="fa-solid fa-bag-shopping"></i>
-        </figure>
+        <div class="toggle-container">
+          <input type="checkbox" class="toggle" id="check" />
+          <label for="check" id="toggleSwitch"></label>
+        </div>
       </section>
     </header>
     <main>
@@ -35,162 +36,24 @@
     <section class="content-container">
       <div class="product-container" id="product-list"></div>
     </section>
-    <button class="fixed-shopping-cart-button" id="openModal">SS</button>
+    <button class="fixed-shopping-cart-button" id="openModal" to-dark>
+      <i class="fa-solid fa-bag-shopping"></i>
+    </button>
     <section class="shopping-cart-modal">
-      <article class="modal-container">
+      <article class="modal-container" to-dark>
         <button class="close-modal-button" id="closeModal">X</button>
-        <h1>Smart Cart</h1>
+        <h1 class="cart-heading">Smart Cart</h1>
         <section class="cart-and-checkout-container">
           <div class="ul-container">
-            <ul class="cart-items-list">
-              <!--  <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li>
-              <li class="cart-item">
-                <img
-                  src="https://i.dummyjson.com/data/products/1/1.jpg"
-                  alt=""
-                />
-                <h3>title</h3>
-                <p>$55</p>
-                <button>remove</button>
-              </li> -->
-            </ul>
+            <ul class="cart-items-list"></ul>
           </div>
           <div class="checkout-container">
             <h1 id="checkout">Checkout</h1>
+            <div class="checkout-content">
+              <p>Number of items: <span id="numberOfItemsContent"></span></p>
+              <p>Price: <span id="totalContent"></span></p>
+              <a class="purchase-button">Purchase</a>
+            </div>
           </div>
         </section>
       </article>
