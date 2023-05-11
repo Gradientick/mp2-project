@@ -99,6 +99,9 @@ const updateItemsList = async (product) => {
     title.textContent = product.title;
     title.classList.add("title1");
 
+    /* const unit = document.createElement("span");
+    unit.textContent = "$"; */
+
     const price = document.createElement("p");
     price.textContent = `$ ${product.price}`;
     price.classList.add("price");
@@ -289,6 +292,7 @@ const selectItems = () => {
       h3.textContent = title;
       createdLi.appendChild(h3);
       const p = document.createElement("p");
+      p.classList.add(`item-price`);
       p.textContent = price;
       createdLi.appendChild(p);
       let removeBtn = document.createElement("button");
@@ -308,15 +312,96 @@ const selectItems = () => {
 
       accessedButtons.style.backgroundColor = "#74d762";
       accessedButtons.innerText = "Added to Cart";
+      accessedButtons.disabled = true;
       //
     });
   });
 };
 
+//REMOVE BUTTON AND CHECKOUT INFORMATION (NUMBER OF ITEMS AND TOTAL PRICE)
 const remove = (removeBtn, accessedButtons) => {
+  let totalItems = document.getElementById("numberOfItemsContent");
+  let liListLength = document.getElementsByClassName("cart-item").length;
+  totalItems.innerText = `${liListLength}`;
+  //TOTAL PRICE
+  let allContainer = document.querySelectorAll(".item-price");
+  let arrrayItems = [0];
+  Object.keys(allContainer, arrrayItems).forEach((key) => {
+    let accessedButton = allContainer[key];
+    let itemPrice = parseFloat(
+      accessedButton.innerText.replace(/[^\w .]/g, "")
+    );
+
+    arrrayItems.push(itemPrice);
+  });
+  let sumOfPrices = arrrayItems.reduce((x, y) => x + y).toPrecision(5);
+  console.log(sumOfPrices);
+
+  let displayTotal = document.getElementById("totalContent");
+  displayTotal.textContent = `$ ${sumOfPrices}`;
+
+  /*  let targetPrice = targetLi.getElementsByClassName("item-price")[0];
+  console.log(targetPrice); */
+  /*  console.log(targetLi); */
+
+  /*   allItemlist.forEach(() => {
+    let singleItemPrice = document.getElementsByClassName("item-price")[0];
+    console.log(singleItemPrice);
+  }); */
+
+  /*  let singleItem = parseFloat(
+    Object.values(singleItemPrice)[0].innerText.replace(/[^\w .]/g, "")
+  );
+
+  console.log(singleItem); */
+
+  /*   toObject.map((key) => {
+    let itemPrice = parseFloat(
+      singleItemPrice[key].innerText.replace(/[^\w .]/g, "")
+    );
+    console.log(itemPrice);
+  }); */
+  ///////////
+  /*   Object.keys(singleItemPrice).forEach((key) => {
+    let itemPrice = parseFloat(
+      singleItemPrice[key].innerText.replace(/[^\w .]/g, "")
+    );
+    console.log(itemPrice);
+  }); */
+
+  //TOTAL
+
+  //REMOVE BUTTON IS CLICKED
   removeBtn.addEventListener("click", () => {
     removeBtn.parentElement.remove();
     accessedButtons.style.backgroundColor = "#fb765b";
     accessedButtons.innerText = "Add to Cart";
+    accessedButtons.disabled = false;
+    const totalItems = document.getElementById("numberOfItemsContent");
+    const liList = document.getElementsByClassName("cart-item").length;
+    totalItems.innerText = `${liList}`;
+
+    //UPDATE TOTAL
+    let allContainer = document.querySelectorAll(".item-price");
+    let arrrayItems = [0];
+
+    Object.keys(allContainer, arrrayItems).forEach((key) => {
+      let accessedButton = allContainer[key];
+      let itemPrice = parseFloat(
+        accessedButton.innerText.replace(/[^\w .]/g, "")
+      );
+
+      arrrayItems.push(itemPrice);
+    });
+    let sumOfPrices = arrrayItems.reduce((x, y) => x + y).toPrecision(5);
+
+    console.log(sumOfPrices);
+    console.log(arrrayItems.length);
+    let displayTotal = document.getElementById("totalContent");
+    if (arrrayItems.length === 0) {
+      displayTotal.textContent = `0`;
+    } else {
+      displayTotal.textContent = `$ ${sumOfPrices}`;
+    }
   });
 };
