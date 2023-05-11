@@ -238,7 +238,8 @@ main h1 {
 
 /* Shopping Cart CSS */
 .add-cart-button1,
-.add-cart-button2 {
+.add-cart-button2,
+.remove-button1 {
   padding: 10px 5px;
   background-color: #fb765b;
   border: none;
