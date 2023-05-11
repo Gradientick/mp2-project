@@ -10,8 +10,8 @@ const item = document.getElementsByClassName("item");
 const list = document.getElementsByClassName("navbuttons-container");
 const bagIcon = document.getElementsByClassName("fa-bag-shopping");
 const modalSection = document.getElementsByClassName("shopping-cart-modal");
-
-console.log(item);
+/* 
+console.log(item); */
 
 darkModeToggle.addEventListener("click", () => {
   toDarkElements.forEach((element) => {
@@ -276,7 +276,7 @@ const selectItems = () => {
       let title = item.getElementsByClassName("title1")[0].innerText;
       let price = item.getElementsByClassName("price")[0].innerText;
       let imageSource = item.getElementsByClassName("image-added")[0].src;
-      console.log(imageSource);
+      /* console.log(imageSource); */
       const uL = document.getElementsByClassName("cart-items-list")[0];
       const createdLi = document.createElement("li");
       createdLi.classList.add(`cart-item`);
@@ -284,17 +284,20 @@ const selectItems = () => {
       const image = document.createElement("img");
       image.src = item.getElementsByClassName("image-added")[0].src;
       createdLi.appendChild(image);
-      console.log(uL);
+      /*     console.log(uL); */
       const h3 = document.createElement("h3");
       h3.textContent = title;
       createdLi.appendChild(h3);
       const p = document.createElement("p");
       p.textContent = price;
       createdLi.appendChild(p);
-      const removeBtn = document.createElement("button");
+      let removeBtn = document.createElement("button");
       removeBtn.textContent = "Remove";
-      removeBtn.classList.add(`add-cart-button1`);
+      removeBtn.classList.add(`remove-button1`);
       createdLi.appendChild(removeBtn);
+      remove(removeBtn, accessedButtons);
+      /* let remove = document.getElementsByClassName(`remove-button1`);
+      removeItem(remove, accessedButtons); */
       /*   const unorderedList = document.getElementsByClassName("cart-items-list");
       const list = document.createElement("li");
       list.classList.add = "cart-item";
@@ -306,8 +309,14 @@ const selectItems = () => {
       accessedButtons.style.backgroundColor = "#74d762";
       accessedButtons.innerText = "Added to Cart";
       //
-
-      console.log(title);
     });
+  });
+};
+
+const remove = (removeBtn, accessedButtons) => {
+  removeBtn.addEventListener("click", () => {
+    removeBtn.parentElement.remove();
+    accessedButtons.style.backgroundColor = "#fb765b";
+    accessedButtons.innerText = "Add to Cart";
   });
 };
