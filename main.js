@@ -4,18 +4,23 @@ const categoryButtons = document.querySelectorAll("[data-category-button]");
 const darkModeDarkerElements = document.querySelectorAll("[darker]");
 const darkModeToggle = document.getElementById("toggleSwitch");
 const toDarkElements = document.querySelectorAll("[dark-mode]");
+const toGrey = document.querySelectorAll("[to-grey]");
 const darkModeHighlights = document.querySelectorAll("[highlight]");
 const toYellow = document.querySelectorAll("[to-yellow]");
-const item = document.getElementsByClassName("item");
+const item = document.querySelectorAll(".item");
 const list = document.getElementsByClassName("navbuttons-container");
 const bagIcon = document.getElementsByClassName("fa-bag-shopping");
 const modalSection = document.getElementsByClassName("shopping-cart-modal");
-/* 
-console.log(item); */
+const HeaderTitle = document.getElementById("header-text");
+console.log(toGrey);
 
 darkModeToggle.addEventListener("click", () => {
   toDarkElements.forEach((element) => {
     element.classList.toggle("dark-mode");
+  });
+
+  toGrey.forEach((element) => {
+    element.classList.toggle("orange-background");
   });
 
   darkModeDarkerElements.forEach((element) => {
@@ -43,11 +48,11 @@ darkModeToggle.addEventListener("click", () => {
   });
 
   item.forEach((element) => {
-    element.classList.add("grey-background");
+    element.classList.toggle("grey-background");
   });
-
-  modalSection.classList.toggle("dark-mode");
 });
+
+HeaderTitle.addEventListener("click", () => window.scrollTo(0, 0));
 // const categoryButtons = document.querySelectorAll("[data-category-button]");
 // categoryButtons.forEach((button) => {
 //   button.addEventListener("click", (event) => {

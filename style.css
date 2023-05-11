@@ -227,15 +227,19 @@ main h1 {
   background-color: #fa9884;
   padding: 10px 10px;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 5px #e74646;
+  box-shadow: 5px 5px #e74646;
   gap: 1em;
   transition: all 0.3s;
 }
 
 .item:hover {
-  box-shadow: 5px 5px 5px 5px #fa785e;
+  box-shadow: 5px 5px#fa785e;
 }
 
+.image-added {
+  max-width: 10vw;
+  max-height: 20vh;
+}
 /* Shopping Cart CSS */
 .add-cart-button1,
 .add-cart-button2,
@@ -405,11 +409,11 @@ main h1 {
 }
 
 .to-yellow {
-  color: #ffb700da;
+  color: #ffb800;
 }
 
-.grey-background {
-  color: #595959;
+.orange-background {
+  background-color: #ffaa9a;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 767px) {
@@ -417,7 +421,9 @@ main h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
   }
-
+  header {
+    width: 100%;
+  }
   header h1 {
     font-size: 2em;
   }
@@ -432,10 +438,21 @@ main h1 {
 
   .navbuttons-container {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 
   .navbuttons-container li {
     margin: 0 0 0 2.4em;
+  }
+
+  .item {
+    gap: 0;
+    padding: 0;
+  }
+
+  .image-added {
+    max-width: 30vw;
+    max-height: 35vh;
   }
 }
 
@@ -449,5 +466,14 @@ main h1 {
   }
   .navbuttons-container li {
     margin-left: 3em;
+  }
+
+  header,
+  .navbuttons-container {
+    width: 100%;
+  }
+  .image-added {
+    max-width: 20vw;
+    max-height: 35vh;
   }
 }
