@@ -12,8 +12,10 @@ const list = document.getElementsByClassName("navbuttons-container");
 const bagIcon = document.getElementsByClassName("fa-bag-shopping");
 const modalSection = document.getElementsByClassName("shopping-cart-modal");
 const HeaderTitle = document.getElementById("header-text");
-console.log(toGrey);
 
+HeaderTitle.addEventListener("click", () => window.scrollTo(0, 0));
+
+// Dark Mode Feature
 darkModeToggle.addEventListener("click", () => {
   toDarkElements.forEach((element) => {
     element.classList.toggle("dark-mode");
@@ -52,8 +54,7 @@ darkModeToggle.addEventListener("click", () => {
   });
 });
 
-HeaderTitle.addEventListener("click", () => window.scrollTo(0, 0));
-
+// Filter List Feature
 const filterAndUpdateItems = () => {
   filterItemsByCategory(product1, category);
   updateItemsList(filteredItems);
@@ -63,12 +64,12 @@ const filterItemsByCategory = (items, category) => {
   return filteredItems;
 };
 
+// API Calling
 const fetchNewProduct1 = async () => {
   const response1 = fetch("https://fakestoreapi.com/products");
   const data1 = (await response1).json();
   return data1;
 };
-
 const updateItemsList = async (product) => {
   product.forEach(function (product) {
     const card = document.createElement("div");
@@ -96,30 +97,6 @@ const updateItemsList = async (product) => {
   });
 
   selectItems();
-};
-const updateItemsList2 = (product) => {
-  product.forEach(function (product2) {
-    const card = document.createElement("div");
-    card.classList.add("item");
-    card.id = `card-container`;
-    const image = document.createElement("img");
-    image.src = product2.images[0];
-    const title = document.createElement("h5");
-    title.id = "title-id";
-    title.textContent = product2.title;
-    const price = document.createElement("p");
-    price.textContent = `$ ${product2.price}`;
-    const addToCartBtn = document.createElement("button");
-    addToCartBtn.id = "button-id";
-    addToCartBtn.classList.add("add-cart-button2");
-    addToCartBtn.classList.add(`${product2.price}`);
-    addToCartBtn.textContent = `Add to Cart`;
-    document.getElementById("product-list").appendChild(card);
-    card.appendChild(image);
-    card.appendChild(title);
-    card.appendChild(price);
-    card.appendChild(addToCartBtn);
-  });
 };
 const generateProducts1 = async () => {
   const data1 = await fetchNewProduct1();

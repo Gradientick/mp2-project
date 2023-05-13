@@ -14,7 +14,7 @@
   </head>
   <body dark-mode>
     <header darker>
-      <h1 highlight id="header-text">Shop Smart</h1>
+      <h1 highlight id="header-text" class="header-text">Shop Smart</h1>
       <section>
         <div class="toggle-container">
           <input type="checkbox" class="toggle" id="check" />
@@ -27,8 +27,12 @@
     </main>
     <nav>
       <ul class="navbuttons-container" darker>
-        <li data-category-button><span highlight>All</span></li>
-        <li data-category-button><span highlight>women's clothing</span></li>
+        <li class="all-button" data-category-button>
+          <span highlight>All</span>
+        </li>
+        <li class="womens-category" data-category-button>
+          <span highlight>women's clothing</span>
+        </li>
         <li data-category-button><span highlight>men's clothing</span></li>
         <li data-category-button><span highlight>jewelery</span></li>
         <li data-category-button><span highlight>electronics</span></li>
@@ -51,9 +55,15 @@
           <div class="checkout-container" to-grey>
             <h1 id="checkout">Checkout</h1>
             <div class="checkout-content">
-              <p>Number of items: <span id="numberOfItemsContent"></span></p>
-              <p>Price: <span id="totalContent"></span></p>
-              <a class="purchase-button">Purchase</a>
+              <div class="quantity-price-button-container">
+                <p class="quantity-container">
+                  Number of items: <span id="numberOfItemsContent"></span>
+                </p>
+                <p class="price-container">
+                  Price: <span id="totalContent"></span>
+                </p>
+                <a class="purchase-button">Purchase</a>
+              </div>
             </div>
           </div>
         </section>
