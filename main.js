@@ -222,7 +222,7 @@ const generateProducts1 = async () => {
           button.disabled = true;
           break;
         ///
-        case "All":
+        case "All PRODUCTS":
           var filteredItems = filterItemsByCategory(product1, category);
           //Men Clothes
           arrayMenClothes.forEach((arrayMenClothes) => {
