@@ -83,7 +83,7 @@ const updateItemsList = async (product) => {
     title.textContent = product.title;
     title.classList.add("title1");
     const price = document.createElement("p");
-    price.textContent = `$ ${product.price}`;
+    price.textContent = `$${product.price}`;
     price.classList.add("price");
     const addToCartBtn = document.createElement("button");
     addToCartBtn.classList.add("add-cart-button1");
@@ -295,6 +295,7 @@ const selectItems = () => {
       createdLi.classList.add(`cart-item`);
       uL.appendChild(createdLi);
       const image = document.createElement("img");
+      image.classList.add("modal-image");
       image.src = item.getElementsByClassName("image-added")[0].src;
       createdLi.appendChild(image);
       const h3 = document.createElement("h3");
