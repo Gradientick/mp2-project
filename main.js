@@ -310,6 +310,7 @@ const selectItems = () => {
       removeBtn.classList.add(`remove-button1`);
       createdLi.appendChild(removeBtn);
       remove(removeBtn, accessedButtons);
+
       accessedButtons.style.backgroundColor = "#74d762";
       accessedButtons.innerText = "Added to Cart";
       accessedButtons.disabled = true;
@@ -337,7 +338,53 @@ const remove = (removeBtn, accessedButtons) => {
   let displayTotal = document.getElementById("totalContent");
   displayTotal.textContent = `$ ${sumOfPrices}`;
 
-  //TOTAL
+  //REMOVE ALL
+  const removeAll = document.querySelector(".remove-all");
+  removeAll.addEventListener("click", () => {
+    let toBeRemoved = document.querySelectorAll(".remove-button1");
+    Object.keys(toBeRemoved).forEach((key) => {
+      let singleRemove = toBeRemoved[key];
+      singleRemove.parentElement.remove();
+      /*  accessedButtons.style.backgroundColor = "#fb765b";
+      accessedButtons.innerText = "Add to Cart";
+      accessedButtons.disabled = false; */
+    });
+
+    let addButtonAfterRemoveAll =
+      document.querySelectorAll(".add-cart-button1");
+    Object.keys(addButtonAfterRemoveAll).forEach((key) => {
+      let changeAllAddButtons = addButtonAfterRemoveAll[key];
+      changeAllAddButtons.style.backgroundColor = "#fb765b";
+      changeAllAddButtons.innerText = "Add to Cart";
+      changeAllAddButtons.disabled = false;
+    });
+
+    /* removeBtn.parentElement.remove(); */
+
+    const totalItems = document.getElementById("numberOfItemsContent");
+    const liList = document.getElementsByClassName("cart-item").length;
+    totalItems.innerText = `${liList}`;
+
+    //UPDATE TOTAL
+    let allContainer = document.querySelectorAll(".item-price");
+    let arrrayItems = [0];
+    Object.keys(allContainer, arrrayItems).forEach((key) => {
+      let accessedButton = allContainer[key];
+      let itemPrice = parseFloat(
+        accessedButton.innerText.replace(/[^\w .]/g, "")
+      );
+      arrrayItems.push(itemPrice);
+    });
+    let sumOfPrices = arrrayItems.reduce((x, y) => x + y).toPrecision(5);
+    console.log(sumOfPrices);
+    console.log(arrrayItems.length);
+    let displayTotal = document.getElementById("totalContent");
+    if (arrrayItems.length === 0) {
+      displayTotal.textContent = `0`;
+    } else {
+      displayTotal.textContent = `$ ${sumOfPrices}`;
+    }
+  });
 
   //REMOVE BUTTON IS CLICKED
   removeBtn.addEventListener("click", () => {

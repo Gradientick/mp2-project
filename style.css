@@ -401,6 +401,15 @@ main h1 {
   transition: all 0.3s;
 }
 
+.remove-all {
+  background-color: #fc3939;
+  text-align: center;
+  width: 9em;
+  padding: 0.3em;
+  border-radius: 7px;
+  transition: all 0.3s;
+}
+
 .purchase-button:hover {
   cursor: pointer;
   background-color: #fa9884;
@@ -604,8 +613,11 @@ main h1 {
   }
 
   .checkout-container {
-    height: 20vh;
-    width: 70vw;
+    height: 70%;
+    width: 100%;
+    margin-top: 1em;
+    overflow: hidden;
+    overflow-y: scroll;
   }
 
   #checkout {
