@@ -62,12 +62,32 @@
                 <p class="price-container">
                   Price: <span id="totalContent"></span>
                 </p>
-                <a class="purchase-button">Purchase</a>
+                <a class="purchase-button" id="purchase-button">Purchase</a>
               </div>
             </div>
           </div>
         </section>
       </article>
+    </section>
+    <section class="purchase-popup-modal" id="purchase-popup-modal">
+      <div class="popup-modal-container">
+        <button class="close-popup-button" id="close-popup-button">X</button>
+        <div class="popup-content-container">
+          <div class="popup-text-container">
+            <h3 class="popup-main-text">Order Succesfully Placed!</h3>
+            <p class="popup-text">
+              please prepare
+              <span class="amount-to-pay" id="amount-to-pay"></span>, upon
+              delivery
+            </p>
+          </div>
+          <div class="popup-button-container">
+            <button class="popup-button" id="close-popup-button">
+              Return to Homepage
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
     <footer>
       <h1></h1>

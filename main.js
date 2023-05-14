@@ -12,7 +12,12 @@ const list = document.getElementsByClassName("navbuttons-container");
 const bagIcon = document.getElementsByClassName("fa-bag-shopping");
 const modalSection = document.getElementsByClassName("shopping-cart-modal");
 const HeaderTitle = document.getElementById("header-text");
-
+const purchaseButton = document.getElementById("purchase-button");
+const cartPrice = document.getElementById("totalContent");
+const closePopupButton = document.getElementById("close-popup-button");
+const popupModal = document.getElementById("purchase-popup-modal");
+const closePopup = document.querySelectorAll("#close-popup-button");
+let popupAmount = document.getElementById("amount-to-pay");
 HeaderTitle.addEventListener("click", () => window.scrollTo(0, 0));
 
 // Dark Mode Feature
@@ -360,8 +365,8 @@ const remove = (removeBtn, accessedButtons) => {
       arrrayItems.push(itemPrice);
     });
     let sumOfPrices = arrrayItems.reduce((x, y) => x + y).toPrecision(5);
-    console.log(sumOfPrices);
-    console.log(arrrayItems.length);
+    // console.log(sumOfPrices);
+    // console.log(arrrayItems.length);
     let displayTotal = document.getElementById("totalContent");
     if (arrrayItems.length === 0) {
       displayTotal.textContent = `0`;
@@ -370,3 +375,22 @@ const remove = (removeBtn, accessedButtons) => {
     }
   });
 };
+
+// Update thank you page
+purchaseButton.addEventListener("click", () => {
+  // console.log(cartPrice.innerText);
+  let orderPrice = "";
+
+  if (cartPrice.textContent === "") return;
+  else orderPrice = cartPrice.textContent;
+  modal.style.display = "none";
+  popupModal.style.display = "flex";
+  popupAmount.textContent = orderPrice;
+});
+
+closePopup.forEach((button) => {
+  button.addEventListener("click", () => {
+    popupModal.style.display = "none";
+    window.location.reload();
+  });
+});
