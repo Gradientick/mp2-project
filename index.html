@@ -11,6 +11,24 @@
       crossorigin="anonymous"
     ></script>
     <!-- Fonts -->
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/favicon_io/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon_io/favicon-16x16.png"
+    />
   </head>
   <body dark-mode>
     <header darker>
@@ -45,7 +63,7 @@
       <i class="fa-solid fa-bag-shopping"></i>
     </button>
     <section class="shopping-cart-modal" id="shopping-cart-modal">
-      <article class="modal-container" dark-mode>
+      <article class="modal-container" to-grey>
         <button class="close-modal-button" id="closeModal">X</button>
         <h1 class="cart-heading">Smart Cart</h1>
         <section class="cart-and-checkout-container">
@@ -53,25 +71,21 @@
             <ul class="cart-items-list"></ul>
           </div>
           <div class="checkout-container" to-grey>
-            <h1 id="checkout">Checkout</h1>
+            <h1 class="checkout" highlight>Checkout</h1>
             <div class="checkout-content">
               <div class="quantity-price-button-container">
-                <p class="quantity-container">
+                <p class="quantity-container" highlight>
                   Number of items: <span id="numberOfItemsContent"></span>
                 </p>
-                <p class="price-container">
+                <p class="price-container" highlight>
                   Price: <span id="totalContent"></span>
                 </p>
-<<<<<<< HEAD
                 <a class="purchase-button" id="purchase-button">Purchase</a>
-=======
                 <div>
-                  <a class="purchase-button">Purchase</a>
                   <button class="purchase-button remove-all">
                     Remove All Items
                   </button>
                 </div>
->>>>>>> e7c0d93df5b36950a354aa297e50a2b22fb64947
               </div>
             </div>
           </div>
@@ -79,7 +93,7 @@
       </article>
     </section>
     <section class="purchase-popup-modal" id="purchase-popup-modal">
-      <div class="popup-modal-container">
+      <div class="popup-modal-container" to-grey>
         <button class="close-popup-button" id="close-popup-button">X</button>
         <div class="popup-content-container">
           <div class="popup-text-container">

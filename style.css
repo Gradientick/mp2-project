@@ -314,6 +314,7 @@ main h1 {
   width: 80%;
   height: 80%;
   border-radius: 5px;
+  padding-bottom: 4em;
 }
 
 .modal-container h1 {
@@ -358,7 +359,6 @@ main h1 {
   border-radius: 4px;
   background-color: #ffe5ca;
   width: 13.5em;
-
   text-align: center;
   align-items: center;
   justify-content: space-between;
@@ -404,7 +404,7 @@ main h1 {
 }
 
 .remove-all {
-  background-color: #fc3939;
+  background-color: #ccc;
   text-align: center;
   width: 9em;
   padding: 0.3em;
@@ -448,7 +448,7 @@ main h1 {
 }
 
 .orange-background {
-  background-color: #ffaa9a;
+  background-color: #282828;
 }
 
 /* purchase popup */
