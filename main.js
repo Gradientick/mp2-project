@@ -274,17 +274,6 @@ closeModal.addEventListener("click", (add) => {
 });
 
 //Add to cart
-const selectItems2 = () => {
-  let button = document.getElementsByClassName("add-cart-button2");
-
-  Object.keys(button).forEach((key) => {
-    let accessedButtons = button[key];
-    accessedButtons.addEventListener("click", () => {
-      let item = accessedButtons.parentElement.innerText;
-      console.log(item);
-    });
-  });
-};
 
 const selectItems = () => {
   let button = document.getElementsByClassName("add-cart-button1");
